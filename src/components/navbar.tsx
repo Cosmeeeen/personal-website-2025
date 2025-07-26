@@ -6,8 +6,8 @@ import { cn } from '@/lib/utils';
 
 export function Navbar() {
   return (
-    <nav className="fixed top-4 left-0 right-0 z-50 mx-auto text-center">
-      <h1 className="text-4xl font-semibold">WWW Cosmin Ilie</h1>
+    <nav className="mx-auto text-center my-4">
+      <h1 className="text-4xl font-semibold">Cosmin Ilie</h1>
       {PAGES.map((page, index) => (
         <span key={page.href}>
           <Link
