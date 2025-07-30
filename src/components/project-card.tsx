@@ -4,6 +4,7 @@ import * as React from 'react';
 import Image from 'next/image';
 
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import {
   Dialog,
@@ -20,6 +21,7 @@ export type TProject = {
   image: string,
   usedTechnologies?: string[]
   longDescription?: string,
+  projectUrl?: string,
 }
 
 export function ProjectCard({ project }: {
@@ -30,7 +32,8 @@ export function ProjectCard({ project }: {
     title,
     shortDescription,
     longDescription,
-    usedTechnologies
+    usedTechnologies,
+    projectUrl
   } = project;
 
   const renderUsedTechnologies = React.useCallback(() => {
@@ -67,13 +70,13 @@ export function ProjectCard({ project }: {
     <Dialog>
       <DialogTrigger asChild>
         <Card className="w-full cursor-pointer hover:shadow-lg hover:border-primary/20 transition-all duration-200 overflow-hidden group">
-          <div className="aspect-video overflow-hidden">
+          <div className="aspect-video overflow-hidden relative">
             <Image
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+              className="object-cover group-hover:scale-105 transition-transform duration-200"
               alt={`Screenshot displaying the ${title} project.`}
               src={image}
-              height={400}
-              width={600}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
           <div className="p-4">
@@ -99,18 +102,28 @@ export function ProjectCard({ project }: {
         </DialogHeader>
         
         <div className="space-y-6">
-          <div className="aspect-video overflow-hidden rounded-lg border">
+          <div className="aspect-video overflow-hidden rounded-lg border relative">
             <Image
-              className="w-full h-full object-cover"
+              className="object-cover"
               alt={`Screenshot displaying the ${title} project.`}
               src={image}
-              width={1200}
-              height={675}
+              fill
+              sizes="(max-width: 768px) 100vw, 80vw"
             />
           </div>
           
           {renderUsedTechnologies()}
           {renderLongDescription()}
+          
+          {projectUrl && (
+            <div className="flex justify-end pt-4 border-t">
+              <Button asChild>
+                <a href={projectUrl} target="_blank" rel="noopener noreferrer">
+                  View Project
+                </a>
+              </Button>
+            </div>
+          )}
         </div>
       </DialogContent>
     </Dialog>
