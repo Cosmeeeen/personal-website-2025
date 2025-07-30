@@ -6,7 +6,17 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 
 export const metadata: Metadata = {
-  title: 'Cosmin Ilie - Contact',
+  title: 'Contact',
+  description: 'Get in touch with Cosmin Ilie, Frontend Engineer based in Bucharest. Available for freelance projects, full-time opportunities, and collaborations. Contact via email, LinkedIn, or GitHub.',
+  openGraph: {
+    title: 'Contact - Cosmin Ilie',
+    description: 'Get in touch with Cosmin Ilie, Frontend Engineer based in Bucharest. Available for freelance projects, full-time opportunities, and collaborations. Contact via email, LinkedIn, or GitHub.',
+    url: 'https://cosmin.zip/contact',
+  },
+  twitter: {
+    title: 'Contact - Cosmin Ilie',
+    description: 'Get in touch with Cosmin Ilie, Frontend Engineer based in Bucharest. Available for freelance projects, full-time opportunities, and collaborations. Contact via email, LinkedIn, or GitHub.',
+  },
 };
 
 const contactMethods = [
@@ -49,8 +59,9 @@ export default function ContactPage() {
             Let&apos;s Connect
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            I&apos;m always excited to discuss new projects, creative ideas, or opportunities to be part of your vision.
-            Whether you&apos;re looking for a frontend engineer or just want to chat about technology, I&apos;d love to hear from you.
+            Ready to bring your web application ideas to life? I&apos;m available for freelance projects, 
+            full-time opportunities, and collaborations. Reach out via email, connect on LinkedIn, 
+            or check out my code on GitHub - I&apos;d love to discuss how we can work together.
           </p>
         </div>
       </div>

@@ -5,7 +5,17 @@ import { ProjectCard, type TProject } from '@/components/project-card';
 
 
 export const metadata: Metadata = {
-  title: 'Cosmin Ilie - Projects',
+  title: 'Projects',
+  description: 'Explore my portfolio of web applications including Focus Timer, Flag Guesser, and Typing Game. Each project showcases modern React, Next.js, and TypeScript development with clean, user-focused design.',
+  openGraph: {
+    title: 'Projects - Cosmin Ilie',
+    description: 'Explore my portfolio of web applications including Focus Timer, Flag Guesser, and Typing Game. Each project showcases modern React, Next.js, and TypeScript development with clean, user-focused design.',
+    url: 'https://cosmin.zip/projects',
+  },
+  twitter: {
+    title: 'Projects - Cosmin Ilie',
+    description: 'Explore my portfolio of web applications including Focus Timer, Flag Guesser, and Typing Game. Each project showcases modern React, Next.js, and TypeScript development with clean, user-focused design.',
+  },
 };
 
 const PROJECTS: TProject[] = [
@@ -59,8 +69,9 @@ export default function ProjectsPage() {
             My Work
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
-            A collection of projects that showcase my passion for building elegant, functional, and user-focused web applications.
-            Each project represents a unique challenge and learning experience in my journey as a frontend engineer.
+            Explore interactive web applications spanning productivity tools, educational games, and skill-building exercises.
+            Each project demonstrates modern React development, clean UI design, and thoughtful user experience - 
+            from time management utilities to engaging learning experiences.
           </p>
         </div>
       </div>

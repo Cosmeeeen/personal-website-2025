@@ -1,6 +1,20 @@
 import * as React from 'react';
 import Link from 'next/link';
+import { Metadata } from 'next';
 import { ArrowRight, Code, Layers, Zap } from 'lucide-react';
+
+export const metadata: Metadata = {
+  description: "Frontend Engineer passionate about creating exceptional digital experiences. Specializing in React, Next.js, TypeScript, and modern web technologies. Based in Bucharest, available for projects worldwide.",
+  openGraph: {
+    title: "Cosmin Ilie - Frontend Engineer",
+    description: "Frontend Engineer passionate about creating exceptional digital experiences. Specializing in React, Next.js, TypeScript, and modern web technologies. Based in Bucharest, available for projects worldwide.",
+    url: "https://cosmin.zip",
+  },
+  twitter: {
+    title: "Cosmin Ilie - Frontend Engineer",
+    description: "Frontend Engineer passionate about creating exceptional digital experiences. Specializing in React, Next.js, TypeScript, and modern web technologies. Based in Bucharest, available for projects worldwide.",
+  },
+};
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -34,7 +48,8 @@ export default function Home() {
           </h1>
           <p className="text-2xl text-muted-foreground leading-relaxed mb-8 max-w-3xl">
             I&apos;m Cosmin, a passionate frontend engineer based in Bucharest. 
-            I specialize in creating exceptional digital experiences with modern web technologies.
+            I build responsive web applications with React, Next.js, and TypeScript, focusing on clean architecture, 
+            performance optimization, and intuitive user experiences.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button asChild size="lg" className="font-medium">
