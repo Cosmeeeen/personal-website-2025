@@ -14,11 +14,18 @@ import {
   DialogTitle,
   DialogDescription
 } from '@/components/ui/dialog';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '@/components/ui/carousel';
 
 export type TProject = {
   title: string,
   shortDescription?: string,
-  image: string,
+  images: string[],
   usedTechnologies?: string[]
   longDescription?: string,
   projectUrl?: string,
@@ -28,7 +35,7 @@ export function ProjectCard({ project }: {
   project: TProject
 }) {
   const {
-    image,
+    images,
     title,
     shortDescription,
     longDescription,
@@ -74,7 +81,7 @@ export function ProjectCard({ project }: {
             <Image
               className="object-cover group-hover:scale-105 transition-transform duration-200"
               alt={`Screenshot displaying the ${title} project.`}
-              src={image}
+              src={images[0]}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
@@ -102,15 +109,25 @@ export function ProjectCard({ project }: {
         </DialogHeader>
         
         <div className="space-y-6">
-          <div className="aspect-video overflow-hidden rounded-lg border relative">
-            <Image
-              className="object-cover"
-              alt={`Screenshot displaying the ${title} project.`}
-              src={image}
-              fill
-              sizes="(max-width: 768px) 100vw, 80vw"
-            />
-          </div>
+          <Carousel opts={{ align: "start", loop: true }}>
+            <CarouselContent>
+              {images.map((image, index) => (
+                <CarouselItem key={index}>
+                  <div className="aspect-video overflow-hidden rounded-lg border relative">
+                    <Image
+                      className="object-cover"
+                      alt={`Screenshot ${index + 1} displaying the ${title} project.`}
+                      src={image}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 80vw"
+                    />
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-4 bg-black/20 backdrop-blur-sm hover:bg-black/40 border-white/20" />
+            <CarouselNext className="right-4 bg-black/20 backdrop-blur-sm hover:bg-black/40 border-white/20" />
+          </Carousel>
           
           {renderUsedTechnologies()}
           {renderLongDescription()}

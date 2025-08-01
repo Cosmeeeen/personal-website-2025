@@ -22,7 +22,7 @@ const PROJECTS: TProject[] = [
   {
     title: 'Focus Timer',
     shortDescription: 'A minimalist productivity app designed to help users track and manage their focused work sessions',
-    image: '/focus-timer-screenshot.png',
+    images: ['/focus-timer-screenshot.png'],
     longDescription: 'Focus Timer is a clean, modern web application built to enhance productivity through time tracking. The app features a simple timer interface that allows users to monitor their focused work sessions, with tracking for both daily and total accumulated focus time. The application emphasizes simplicity and user experience.',
     usedTechnologies: [
       'Next.js',
@@ -35,7 +35,7 @@ const PROJECTS: TProject[] = [
   {
     title: 'Flag Guesser',
     shortDescription: 'An interactive educational game for learning world flags and discovering interesting country facts',
-    image: '/flags-screenshot.png',
+    images: ['/flags-screenshot.png'],
     longDescription: 'Flag Guesser is an engaging web-based game that challenges players to identify country flags while learning fascinating facts about different nations. The application features continent-based filtering, immediate feedback, and educational content that makes geography learning both fun and informative. Country facts are dynamically generated using the ChatGPT API, ensuring fresh and interesting information with each interaction.',
     usedTechnologies: [
       'Next.js',
@@ -48,7 +48,7 @@ const PROJECTS: TProject[] = [
   {
     title: 'Typing Game',
     shortDescription: 'A simple yet engaging typing game to improve typing speed and accuracy',
-    image: '/typing-game-screenshot.png',
+    images: ['/typing-game-screenshot.png'],
     longDescription: 'A web-based typing game that provides an interactive and fun way to practice and improve typing skills. The application features a clean, minimalist design with responsive layout that works seamlessly across all devices. Built with modern web technologies to deliver a smooth and engaging user experience.',
     usedTechnologies: [
       'Next.js',
@@ -70,7 +70,7 @@ export default function ProjectsPage() {
           </h1>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Explore interactive web applications spanning productivity tools, educational games, and skill-building exercises.
-            Each project demonstrates modern React development, clean UI design, and thoughtful user experience - 
+            Each project demonstrates modern React development, clean UI design, and thoughtful user experience -
             from time management utilities to engaging learning experiences.
           </p>
         </div>
